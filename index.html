@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="icon" type="image/png" href="Imagens/banner/p.png.png">
+    <link rel="icon" type="image/png" href="img/banner/p.png.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuedesSEC</title>
@@ -45,30 +45,42 @@
             padding: 0;
             margin-bottom: 24px;
         }
+        /* Estilização moderna para itens das pastas nos modais */
         .modal-list li {
-            margin-bottom: 14px;
+            background: #181818;
+            color: #00ff00;
+            font-weight: bold;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            margin-bottom: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #00ff0022;
             display: flex;
             align-items: center;
-            transition: background 0.2s;
-            border-radius: 8px;
-            padding: 6px 8px;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
             cursor: pointer;
-            color: #1a237e; /* Altere aqui para a cor desejada */
-            font-weight: bold;
+            border: 1px solid #00ff00;
         }
         .modal-list li:hover {
-            background: #f0f4ff;
+            background: #222;
+            box-shadow: 0 4px 16px #00ff0044;
+            transform: scale(1.03);
         }
         .modal-list i {
-            margin-right: 10px;
-            color: #007bff;
-            font-size: 1.2em;
+            margin-right: 12px;
+            color: #00ff00;
+            font-size: 1.3em;
+            transition: color 0.2s;
         }
         .modal-list a {
-            color: #007bff;
+            color: #00ff00;
             text-decoration: none;
             font-weight: 500;
             font-size: 1em;
+            transition: text-shadow 0.2s;
+        }
+        .modal-list a:hover {
+            text-shadow: 0 0 8px #00ff00;
         }
         .modal-close {
             position: absolute;
@@ -96,6 +108,92 @@
             margin-bottom: 10px;
             display: none;
         }
+        .electric-border {
+            border: 2px solid #00ff00 !important;
+            border-radius: 16px;
+            box-shadow: none !important;
+        }
+
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+           
+        }
+
+        .fade-in-msg {
+            opacity: 0;
+            animation: fadeInMsg 1.2s forwards;
+        }
+        @keyframes fadeInMsg {
+            to { opacity: 1; }
+        }
+
+        .test-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(24,24,24,0.85);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #00ff0033;
+            padding: 18px 24px 24px 24px;
+            margin-bottom: 12px;
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+        .test-card:hover {
+            box-shadow: 0 8px 32px #00ff00, 0 0 32px #00ff0044;
+            transform: translateY(-4px) scale(1.04);
+        }
+        .test-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #00ff00;
+            color: #181818;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 12px;
+            padding: 10px 28px;
+            margin-bottom: 18px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px #00ff0044;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .test-btn:hover {
+            background: #00cc00;
+            color: #fff;
+            box-shadow: 0 4px 16px #00ff00;
+        }
+        .test-btn i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+        .test-img-wrap {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 24px #00ff00;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+        .test-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+            transition: transform 0.3s;
+        }
+        .test-card:hover .test-img {
+            transform: scale(1.07) rotate(-2deg);
+        }
     </style>
 </head>
 
@@ -114,7 +212,7 @@
                 <img src="Imagens/banner/p.png.png" alt="Logo GuedesSEC" style="height:300px;">
                 <div class="logo-text">
                     <div class="logo-name"></div>
-                    <div class="logo-tagline">Personal Repository do ArkanROOT</div>
+                    <div class="logo-tagline">Biblioteca de ALEXANDRIA</div>
                 </div>
             </div>
             <nav>
@@ -134,79 +232,71 @@
 
     <main class="container main-content">
         <section class="welcome-section">
-            <h1>Bem-vindo ao Repositório de João Mateus</h1>
-            <p>Este é o seu centro de armazenamento pessoal para ISOs, livros, códigos e links para jogos.</p>
-            <p>Organize e acesse esses recursos de forma segura e eficiente.</p>
+            <h1 class="typing-effect">Bem vindo à Biblioteca de Alexandria</h1>
+            <p class="fade-in-msg" style="animation-delay:2.3s;">Este é o seu centro de armazenamento pessoal para ISOs, livros, códigos e links para jogos.</p>
+            <p class="fade-in-msg" style="animation-delay:3.1s;">Organize e acesse esses recursos de forma segura e eficiente.</p>
         </section>
 
         <section class="categories">
         </section>
 
-        <div style="width: 100%; height: 200px; margin-top: 10px;">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/vTM3Qxq6zUCRXUUM/scene.splinecode" hide-spline-logo></spline-viewer>
-        </div>
     </main>
     <main class="container main-content">
         <section class="categories">
-            <div class="category-card">
+            <div class="category-card electric-border">
                 <div class="category-icon">
                     <img src="Imagens/img/isos.png" alt="ISOs" style="height:50px;">
                 </div>
                 <h3>Isos</h3>
                 <p>Uma coleção completa: sistemas operacionais, jogos e utilitários prontos para rodar. Escolha sua ISO e tenha tudo em um só lugar.</p>
-                <button onclick="openModal('modalIsos')" class="btn">Acessar Isos</button>
+            <button onclick="openModal('modalIsos')" class="btn" style="background:#ffffff;color:#000000;font-weight:bold;">Acessar Isos</button>
             </div>
 
-            <div class="category-card">
+            <div class="category-card electric-border">
                 <div class="category-icon">
                     <img src="Imagens/img/livros.png" alt="Livros" style="height:50px;">
                 </div>
-                <h3>Livros</h3>
+                <h3>Books</h3>
                 <p>Conhecimento nunca ocupa espaço — aqui cada página é um upgrade na sua mente.</p>
-                <button onclick="openModal('modalLivros')" class="btn">Acessar Livros</button>
+            <button onclick="openModal('modalLivros')" class="btn" style="background:#ffffff;color:#000000;font-weight:bold;">Acessar Books</button>
             </div>
 
-            <div class="category-card">
+            <div class="category-card electric-border">
                 <div class="category-icon">
                     <img src="Imagens/img/jogos.png" alt="Jogos" style="height:50px;">
                 </div>
-                <h3>Projetos</h3>
-                <p>Meus projetos diversos.</p>
-                <button onclick="openModal('modalJogos')" class="btn">Acessar Projetos</button>
+                <h3>Torrent</h3>
+                <p>Jogos, filmes e tudo de computaria !!!.</p>
+            <button onclick="openModal('modalJogos')" class="btn" style="background:#ffffff;color:#000000;font-weight:bold;">Acessar links Torrents</button>
             </div>
 
-            <div class="category-card">
+            <div class="category-card electric-border">
                 <div class="category-icon">
-                    <img src="Imagens/img/filmes.png" alt="Filmes" style="height:50px;">
+                    <img src="Imagens/img/filmes.png" alt="Sites" style="height:50px;">
                 </div>
-                <h3>Filmes</h3>
-                <p>Ação, comédia, cientifico e afins.</p>
-                <button onclick="openModal('modalFilmes')" class="btn">Acessar Filmes</button>
+                <h3>Sites</h3>
+                <p>Inteligência Artificial, Filmes séries, páginas de estudos.</p>
+            <button onclick="openModal('modalSites')" class="btn" style="background:hsl(0, 0%, 100%);color:#000000;font-weight:bold;">Acessar websites</button>
             </div>
         </section>
 
         <div style="width:100%; display:flex; justify-content:center; gap:40px; margin-top:40px;">
-            <div style="display:flex; flex-direction:column; align-items:center;">
-                <a href="pages/Jogos web/t.i/T.i.html" target="_blank"
-                   class="btn"
-                   style="background:#2bb932; color:#fff; font-weight:bold; border-radius:8px; padding:8px 16px; text-align:center; margin-bottom:16px;">
-                    <i class="fas fa-rocket" style="margin-right:6px;"></i>
-                    Teste de TI
+            <div class="test-card">
+                <a href="pages/Jogos web/t.i/T.i.html" target="_blank" class="test-btn">
+                    <i class="fas fa-brain"></i> Teste de TI
                 </a>
-                <!-- Soldado ao invés do ghost -->
-                <img src="Imagens/img/151228-online-fraud-hacking-415p_1f4a69829f4841f440828b3b86d4a071.nbcnews-ux-2880-1000.jpg" alt="Soldado 1" style="height:120px; margin-top:10px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+                <div class="test-img-wrap">
+                    <img src="Imagens/img/151228-online-fraud-hacking-415p_1f4a69829f4841f440828b3b86d4a071.nbcnews-ux-2880-1000.jpg" alt="Soldado 1" class="test-img">
+                </div>
             </div>
-
-            <div style="display:flex; flex-direction:column; align-items:center;">
-                <a href="pages/Jogos web/Fiscal Treinamento/Fiscal.html" target="_blank"
-                   class="btn"
-                   style="background:hsl(120, 46%, 48%); color:#fff; font-weight:bold; border-radius:8px; padding:8px 16px; text-align:center; margin-bottom:16px;">
-                    <i class="fas fa-rocket" style="margin-right:6px;"></i>
-                    Teste Fiscal
+            <div class="test-card">
+                <a href="pages/Jogos web/Fiscal Treinamento/Fiscal.html" target="_blank" class="test-btn">
+                    <i class="fas fa-brain"></i> Teste Fiscal
                 </a>
-                <!-- Soldado ao invés do ghost -->
-                <img src="Imagens/img/contabilidade.jpg" alt="Soldado 2" style="height:120px; margin-top:10px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+                <div class="test-img-wrap">
+                    <img src="Imagens/img/contabilidade.jpg" alt="Soldado 2" class="test-img">
+                </div>
             </div>
         </div>
         
@@ -224,9 +314,13 @@
             const categorias = {
             linux: [
                 { nome: "LinuxMit64bits", link: "https://drive.google.com/file/d/1UtcZrC33vQYB9Os4u7XtMhr30v3SF2bC/view?usp=drive_link" },
+                { nome: "ubuntu", link: "https://www.mediafire.com/file/pmrgkv40cc2ogee/ubuntu-24.04.3-desktop-amd64.iso/file" },
+                { nome: "Kali Linux", link: "https://www.mediafire.com/file/lsr4ifcpaehm6jx/kali-linux-2025.2-installer-netinst-amd64.iso/file"}
+            
             ],
             windows: [
                 { nome: "Windows 7 Ultimate 64bits", link: "https://drive.google.com/file/d/1ZMzjdSLNRuaDZwvZgaDzpXRFXUPb27HP/view?usp=drive_link" },
+                { nome: "Windows 10", link: "https://drive.google.com/file/d/1VJ3fZkvhAJf3pfaAc0RZ3a5ehes2suDC/view?usp=drive_link" }
             ],
             jogos: [
                 { nome: "GOD OF WAR 2", link: "https://drive.google.com/file/d/1QYiuKPoY9CIcRjUBZa991EraATbIV9hb/view?usp=drive_link" },
@@ -264,7 +358,7 @@
                 if(id === 'modalIsos') mostrarCategorias();
                 if(id === 'modalLivros') voltarLivros();
                 if(id === 'modalJogos') voltarJogos();
-                if(id === 'modalFilmes') voltarFilmes();
+                if(id === 'modalSites') voltarSites();
             }
 
             // Funções para abrir os modais
@@ -285,6 +379,7 @@
                     <li onclick="showLivros('programacao')"><i class="fas fa-folder"></i> Programação</li>
                     <li onclick="showLivros('romance')"><i class="fas fa-folder"></i> Romance</li>
                     <li onclick="showLivros('tecnologia')"><i class="fas fa-folder"></i> Ciência</li>
+                    <li onclick="showLivros('Filosofia')"><i class="fas fa-folder"></i>Filosofia</li>
                 </ul>
                 <ul class="modal-list" id="livros-arquivos" style="display:none;"></ul>
             </div>
@@ -293,26 +388,25 @@
         <div id="modalJogos" class="modal-overlay">
             <div class="modal-card">
                 <button class="modal-close" onclick="closeModal('modalJogos')">&times;</button>
-                <h2>Escolha uma Linguagem</h2>
+                <h2>Escolha uma categoria</h2>
                 <button id="voltarJogos" class="modal-back" onclick="voltarJogos()">Voltar</button>
                 <ul class="modal-list" id="jogos-categorias">
-                    <li onclick="showJogos('acao')"><i class="fas fa-folder"></i> JavaScript</li>
-                    <li onclick="showJogos('aventura')"><i class="fas fa-folder"></i> Python</li>
+                    <li onclick="showJogos('acao')"><i class="fas fa-folder"></i> Jogos Pirata</li>
                 </ul>
                 <ul class="modal-list" id="jogos-arquivos" style="display:none;"></ul>
             </div>
         </div>
 
-        <div id="modalFilmes" class="modal-overlay">
+        <div id="modalSites" class="modal-overlay">
             <div class="modal-card">
-                <button class="modal-close" onclick="closeModal('modalFilmes')">&times;</button>
-                <h2>Escolha uma categoria de filmes</h2>
-                <button id="voltarFilmes" class="modal-back" onclick="voltarFilmes()">Voltar</button>
-                <ul class="modal-list" id="filmes-categorias">
-                    <li onclick="showFilmes('terror')"><i class="fas fa-folder"></i> Terror</li>
-                    <li onclick="showFilmes('drama')"><i class="fas fa-folder"></i> Drama</li>
+                <button class="modal-close" onclick="closeModal('modalSites')">&times;</button>
+                <h2>Escolha uma categoria de Sites</h2>
+                <button id="voltarSites" class="modal-back" onclick="voltarSites()">Voltar</button>
+                <ul class="modal-list" id="Sites-categorias">
+                    <li onclick="showSites('IA')"><i class="fas fa-folder"></i> IA</li>
+                    <li onclick="showSites('Filmes_e_Series')"><i class="fas fa-folder"></i>Filmes e Séries</li>
                 </ul>
-                <ul class="modal-list" id="filmes-arquivos" style="display:none;"></ul>
+                <ul class="modal-list" id="Sites-arquivos" style="display:none;">Sites</ul>
             </div>
         </div>
     </main>
@@ -323,7 +417,8 @@
                 <img src="Imagens/banner/p.png.png" alt="Logo GuedesSEC" style="height:100px; margin-right:16px;">
                 <div class="footer-text">
                     <p>GuedesSEC &copy; 24/08/2025</p>
-                    <p>Dev. João Mateus M. Guedes</p>
+                    <p>Dev. ArkanRoot-JM</p>
+                    <p>laissez faire 𖠂</p>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 32px;">
@@ -338,9 +433,9 @@
                         <a href="#" onclick="openModal('supportModal')" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed #00ff00; transition: 0.2s;">Suporte</a>
                     </li>
                 </ul>
-                <a href="pages/Loja da GuedesSEC/" class="btn" target="_blank" style="display:inline-block; background:#43a047; color:#fff; font-weight:bold; padding:14px 36px; border-radius:12px; font-size:1.1em; box-shadow:0 4px 16px rgba(0,0,0,0.12); text-decoration:none; margin-left:24px;">
+                <a href="https://buildcores.com/builds/Z9mHaNwCa" class="btn" target="_blank" style="display:inline-block; background:#ffffff; color:#000000; font-weight:bold; padding:14px 36px; border-radius:12px; font-size:1.1em; box-shadow:0 4px 16px rgba(0,0,0,0.12); text-decoration:none; margin-left:24px;">
                     <i class="fas fa-store" style="font-size:1.3em; vertical-align:middle; margin-right:10px;"></i>
-                    Loja GuedesSEC
+                    MONTE SEU PC
                 </a>
             </div>
         </div>
@@ -447,6 +542,125 @@
 
     setInterval(drawMatrix, 40);
     </script>
+
+<script>
+// Dados de exemplo
+const livros = {
+    programacao: [
+        { nome: "A Web Mobile - Programe para um Mundo de Muitos Dispositivos", link: "books/Programação/A Web Mobile - Programe para um Mundo de Muitos Dispositivos.pdf" },
+        { nome: "Aplicações web real time com Node-js", link: "books/Programação/Aplicações web real time com Node-js.pdf" },
+        { nome: "codigo-limpo", link: "books/Programação/codigo-limpo-completo.pdf" },
+        { nome: "CSS Eficiente - Técnicas e ferramentas que fazem a diferença nos seus estilos", link: "books/Programação/CSS Eficiente - Técnicas e ferramentas que fazem a diferença nos seus estilos.pdf" },
+        { nome: "Entendendo-Algoritmos-Um-Guia-Ilustrado-Para-Programadores-e-Outros-Curiosos", link: "books/Programação/Entendendo-Algoritmos-Um-Guia-Ilustrado-Para-Programadores-e-Outros-Curiosos-Autor-_Aditya-Y.pdf" },
+        { nome: "Lógica de Programação Crie seus primeiros programas usando Javascript e HTML", link: "books/Programação/Lógica de Programação Crie seus primeiros programas usando Javascript e HTML.pdf" },
+        { nome: "O Programador Pragmático ", link: "books/Programação/O Programador Pragmático - Autor (Andrew Hunt e David Thomas).pdf" },
+        { nome: "Web Design Responsivo - Páginas adaptáveis para todos os dispositivos", link: "books/Programação/Web Design Responsivo - Páginas adaptáveis para todos os dispositivos - Autor (Casa do Código).pdf" },
+        
+    ],
+    romance: [
+        { nome: "A-Hipotese-do-Amor", link: "books/Romance/A-Hipotese-do-Amor-Ali-Hazelwood.pdf" },
+        { nome: "Jane Eyre autor Charlotte Bronte", link: "Jane Eyre autor Charlotte Bronte" },
+        { nome: "O Pequeno Principe autor", link: "books/Romance/O Pequeno Principe autor Antoine de Saint-Exupéry.pdf" }
+    ],
+    tecnologia: [
+        { nome: "Cosmos", link: "books/Ciência/Carl Sagan - Cosmos.pdf" },
+        { nome: "Um Pálido Ponto Azul", link: "books/Ciência/Carl Sagan - Um Pálido Ponto Azul.pdf" },
+        { nome: "Orgulho e Preconceito", link: "books/Ciência/Orgulho e Preconceito autor Jane Austen.pdf" }
+   ],
+    Filosofia: [
+        { nome: "Biblia", link: "books/Filosofia hermética/BÍBLIA SAGRADA.pdf" },
+        { nome: "O Homem mais rico da babilonia", link: "books/Filosofia hermética/O-Homem-Mais-Rico-da-Babilônia.pdf" },
+        { nome: "Cabalion", link: "books/Filosofia hermética/O Caibalion Edição Definitiva e Comentada - William Arkinson.pdf" }     
+]
+        
+        
+};
+
+const jogos = {
+    acao: [
+        { nome: "Little Nightmares II", link: "https://fir3.net/loopteste" },
+        { nome: "Little Nightmares I", link: "https://fir3.net/lUXI6wt12" },
+        { nome: "Homem aranha 2 - 2023", link: "https://fir3.net/bTVinv8A" },
+        { nome: "The Last of Us Part II Remastered", link: "https://fir3.net/KW683vfQ" },
+        { nome: "Hollow Knight Silksong", link: "https://4br.me/ftbBJJ6ig" }
+        
+    ],
+    aventura: [
+        { nome: "Filmes", link: "#" }
+    ]
+};
+
+const Sites = {
+    IA: [
+        { nome: "Deepseek", link: "https://chat.deepseek.com/" },
+        { nome: "PH IND AI", link: "https://www.phind.com/" },
+        { nome: "CURSOR", link: "https://cursor.com/" },
+        { nome: "V0 DEV", link: "https://v0.app/" },
+        { nome: "Windsurf", link: "https://windsurf.com/?ref=huntscreens.com" },
+        { nome: "Tabnine AI", link: "https://www.tabnine.com/" },
+        //{ nome: "", link: "" },
+        //{ nome: "", link: "" },
+       // { nome: "", link: "" },
+       // { nome: "", link: "" }
+
+    ],
+    Filmes_e_Series: [
+        { nome: "Superflix", link: "https://superflixbr.com/home" },
+        { nome: "Hiperflix", link: "https://hypeflix.info/" }
+    ]
+};
+
+// LIVROS
+function showLivros(cat) {
+    document.getElementById("livros-categorias").style.display = "none";
+    const ul = document.getElementById("livros-arquivos");
+    ul.style.display = "block";
+    ul.innerHTML = "";
+    livros[cat].forEach(item => {
+        ul.innerHTML += `<li><i class="fas fa-book"></i> <a href="${item.link}" target="_blank">${item.nome}</a></li>`;
+    });
+    document.getElementById("voltarLivros").style.display = "inline-block";
+}
+function voltarLivros() {
+    document.getElementById("livros-categorias").style.display = "block";
+    document.getElementById("livros-arquivos").style.display = "none";
+    document.getElementById("voltarLivros").style.display = "none";
+}
+
+// JOGOS
+function showJogos(cat) {
+    document.getElementById("jogos-categorias").style.display = "none";
+    const ul = document.getElementById("jogos-arquivos");
+    ul.style.display = "block";
+    ul.innerHTML = "";
+    jogos[cat].forEach(item => {
+        ul.innerHTML += `<li><i class="fas fa-gamepad"></i> <a href="${item.link}" target="_blank">${item.nome}</a></li>`;
+    });
+    document.getElementById("voltarJogos").style.display = "inline-block";
+}
+function voltarJogos() {
+    document.getElementById("jogos-categorias").style.display = "block";
+    document.getElementById("jogos-arquivos").style.display = "none";
+    document.getElementById("voltarJogos").style.display = "none";
+}
+
+// FILMES
+function showSites(cat) {
+    document.getElementById("Sites-categorias").style.display = "none";
+    const ul = document.getElementById("Sites-arquivos");
+    ul.style.display = "block";
+    ul.innerHTML = "";
+    Sites[cat].forEach(item => {
+        ul.innerHTML += `<li><i class="fas fa-film"></i> <a href="${item.link}" target="_blank">${item.nome}</a></li>`;
+    });
+    document.getElementById("voltarSites").style.display = "inline-block";
+}
+function voltarSites() {
+    document.getElementById("Sites-categorias").style.display = "block";
+    document.getElementById("Sites-arquivos").style.display = "none";
+    document.getElementById("voltarSites").style.display = "none";
+}
+</script>
 
 </body>
 </html>
